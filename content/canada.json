@@ -1,0 +1,103 @@
+{
+  "seo": {
+    "title": "Canadian Market Entry & Business Setup | PHM Consulting",
+    "description": "Planning to start or expand a business in Canada? PHM Consulting helps international companies plan operations, understand requirements and take practical next steps."
+  },
+  "breadcrumb": "Canadian Market Entry",
+  "tag": "International Business Advisory",
+  "heading": "Planning to Do Business in Canada?",
+  "lead": "We help international businesses prepare, plan and take the next steps toward operating in Canada.",
+  "intro": [
+    "Starting or expanding a business in another country comes with many questions. Where do you begin? What rules apply to your business? Who do you need to work with? How do you prepare your operations?",
+    "PHM Consulting helps you understand the process, identify what needs to be done and develop a practical plan for moving forward."
+  ],
+  "button": "Discuss your business plans",
+  "photo": "/assets/canada-skyline.jpg",
+  "photo_alt": "Calgary skyline across the Bow River at sunset",
+  "who": {
+    "heading": "Who We Help",
+    "intro": "We work with international businesses that:",
+    "items": [
+      "Want to start a business in Canada.",
+      "Are considering expanding an existing business into Canada.",
+      "Need help understanding Canadian business requirements.",
+      "Want to build business relationships and establish operations in Canada.",
+      "Have already entered Canada but need help improving operations."
+    ]
+  },
+  "how": {
+    "heading": "How We Can Help",
+    "items": [
+      {
+        "title": "Understanding the Canadian Market",
+        "text": "We help you review your business plans, understand the Canadian business environment and identify important considerations before you expand."
+      },
+      {
+        "title": "Understanding Rules and Requirements",
+        "text": "Different industries have different rules in Canada. We help you identify requirements that may apply to your business and connect with qualified professionals when specialist advice is needed."
+      },
+      {
+        "title": "Planning Your Business Setup",
+        "text": "We help you plan how your Canadian business will operate, including business processes, management responsibilities, staffing needs and day-to-day operations."
+      },
+      {
+        "title": "Finding the Right Business Support",
+        "text": "Entering a new market often requires local knowledge and connections. We help you identify the types of partners, service providers and professional support your business may need."
+      },
+      {
+        "title": "Turning Your Plans into Action",
+        "text": "A good plan is only the beginning. We help you organize next steps, set priorities and track progress as you prepare to establish or grow your business in Canada."
+      }
+    ]
+  },
+  "expect": {
+    "heading": "What You Can Expect",
+    "intro": "Depending on your business needs, we can help you develop:",
+    "items": [
+      "A review of your readiness to enter Canada.",
+      "A list of important business and regulatory requirements to investigate.",
+      "A plan for setting up your Canadian operations.",
+      "A list of potential business support and partnership needs.",
+      "A clear action plan showing what needs to happen next."
+    ],
+    "note": "Every business is different. We will discuss your needs and agree on the work before starting."
+  },
+  "why": {
+    "heading": "Why Work With PHM Consulting?",
+    "tagline": "Practical experience. Clear advice. Real progress.",
+    "paragraphs": [
+      "PHM Consulting is a Canada-based management consulting firm led by Kris Wanner and Yasmin Singh. Together, we bring over 25 years of combined experience in leadership, government, business operations and organizational improvement.",
+      "We understand how organizations work, how decisions are made and what it takes to turn plans into action. Our goal is simple: to help you understand your options, make informed decisions and prepare your business for success in Canada."
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Can a foreign company start a business in Canada?",
+        "answer": "In many cases, yes. The right setup depends on your business, your industry and your plans. We help you understand the general steps and options to explore, and recommend qualified legal and tax professionals for advice on your specific situation."
+      },
+      {
+        "question": "What should I consider before expanding to Canada?",
+        "answer": "Common considerations include your target market, how your Canadian business will be set up and run, industry rules that may apply, staffing, local partners and timelines. We help you work through these questions and build a practical plan."
+      },
+      {
+        "question": "Can PHM help me understand Canadian business requirements?",
+        "answer": "Yes. We help you identify the business and regulatory requirements that may apply and organize what needs to be looked into. We do not provide legal, immigration or tax advice; where specialist advice is needed, we recommend working with qualified professionals."
+      },
+      {
+        "question": "Do I need to travel to Canada to work with PHM?",
+        "answer": "Not necessarily. Much of our work can be done through video calls, email and shared documents. We can discuss whether in-person meetings would be useful for your plans."
+      },
+      {
+        "question": "How much does consulting support cost?",
+        "answer": "Every business is different, so we do not quote a fixed fee before understanding your needs. After an initial conversation, we will agree on the scope of work and cost before starting."
+      }
+    ]
+  },
+  "talk": {
+    "heading": "Let’s Talk About Your Plans",
+    "text": "Whether you are exploring Canada as a new market or preparing to establish your business here, we would be happy to learn more about your goals.",
+    "back_link": "Back to Services"
+  }
+}

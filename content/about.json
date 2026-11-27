@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "About PHM Consulting | Our Leadership Experience",
+    "description": "Meet the principals behind PHM Consulting. Bringing 25+ years of combined leadership and industry experience to organizational improvement."
+  },
+  "label": "About Us",
+  "heading": "Experienced Leaders. Practical Solutions. Measurable Results.",
+  "intro": "PHM Consulting is a boutique consultancy specializing in organizational performance, strategic planning, operational excellence and leadership development. We work alongside organizations to strengthen their foundations, empower their teams and bridge the gap between strategy and execution.",
+  "paragraphs": [
+    "Our co-founders and managing partners, Yasmin Singh and Kris Wanner, bring more than 25 years of combined leadership experience across government, infrastructure, financial services and organizational change.",
+    "We understand the complexities of leading organizations and believe that meaningful, lasting results come from combining clear direction with practical execution.",
+    "PHM Consulting is founded on the principles of Planning, High Performance and Momentum."
+  ],
+  "principles": [
+    "Decisive Execution",
+    "Empowered Culture",
+    "Iterative Innovation"
+  ],
+  "why": {
+    "heading": "Why Work With PHM?",
+    "text": "We have led teams, managed complex work and helped organizations put change into practice. We know that leaders face competing priorities, limited resources and pressure to deliver results. We focus on clear decisions, realistic plans and working alongside your team to make progress that lasts.",
+    "points": [
+      "Experience from inside organizations",
+      "Practical plans, not just recommendations",
+      "People and results together"
+    ]
+  },
+  "team": {
+    "heading": "Meet Our Principals",
+    "subheading": "Complementary Expertise. Shared Commitment to Results.",
+    "people": [
+      {
+        "name": "Yasmin Singh",
+        "title": "Co-founder and Managing Partner",
+        "photo": "/assets/yasmin-singh.jpg",
+        "bio": "Yasmin is an executive leader who knows how to turn complex challenges into clear decisions and real progress. She has led multidisciplinary teams, driven major organizational and technology transformations, and worked across the Saskatchewan public service to move high-stakes priorities forward. At PHM, Yasmin helps clients cut through the noise, make bold but grounded decisions and turn strategy into results."
+      },
+      {
+        "name": "Kris Wanner",
+        "title": "Co-founder and Managing Partner",
+        "photo": "/assets/kris-wanner.jpg",
+        "bio": "Kris knows how to bring clarity to complex organizations and turn big-picture priorities into action. With leadership experience spanning financial services and government infrastructure, he has helped strengthen governance, modernize decision-making and bring teams together around shared goals. He combines sharp strategic thinking with a practical, people-first approach - helping leaders spot risks early, make better decisions and build the momentum to deliver results."
+      }
+    ]
+  },
+  "button": "Let’s discuss your priorities"
+}

@@ -11,10 +11,8 @@ const MAX_BODY = 16 * 1024;
 const MIN_FILL_MS = 3000;          // spam: humans take longer than 3 seconds
 const DEDUPE_HOURS = 24;
 
-const SERVICES = [
-  "Organizational Performance", "Strategy to Execution", "Leadership Effectiveness",
-  "Culture and Employee Engagement", "Canadian Market Entry and Business Setup", "Not Sure Yet",
-];
+// Service names are edited by PHM in /admin, so the server accepts any short, plain service name
+// (the field is still required and length-limited; it is only ever used as text in the email).
 const BUDGET_OPTIONS = ["Not sure yet", "Prefer to discuss"];
 
 const FIELDS = [ // key, email label, max, required
@@ -22,7 +20,7 @@ const FIELDS = [ // key, email label, max, required
   ["organization", "Organization", 180, false],
   ["email", "Email address", 254, true],
   ["phone", "Phone number", 50, false],
-  ["service", "How can we help?", 80, true],
+  ["service", "How can we help?", 150, true],
   ["challenge", "What's your biggest challenge?", 3000, false],
   ["budgetAmount", "Approximate budget (CAD)", 15, false],
   ["budgetOption", "Budget", 30, false],
@@ -57,7 +55,7 @@ export default async (req) => {
     c[k] = v;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.email)) return json(400, false);
-  if (!SERVICES.includes(c.service)) return json(400, false);
+  if (!c.service || /[\u0000-\u001f<>]/.test(c.service)) return json(400, false);
   if (c.budgetOption && !BUDGET_OPTIONS.includes(c.budgetOption)) return json(400, false);
   if (c.budgetAmount && c.budgetOption) return json(400, false);               // mutually exclusive
   if (c.budgetAmount && !/^\$?\s?\d{1,3}(,?\d{3})*(\.\d{1,2})?$/.test(c.budgetAmount)) return json(400, false);

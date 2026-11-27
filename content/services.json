@@ -1,0 +1,59 @@
+{
+  "seo": {
+    "title": "Management Consulting Services | PHM Consulting",
+    "description": "Explore organizational performance, strategy execution, leadership, employee engagement and Canadian market entry services from PHM Consulting."
+  },
+  "label": "Services",
+  "heading": "How We Help",
+  "intro": "We help you understand what's holding your organization back, turn strategy into action and strengthen how your team works together. Each engagement is scoped around your priorities, capacity and intended outcomes.",
+  "services": [
+    {
+      "name": "Organizational Performance",
+      "tag": "",
+      "description": "Understand what slows your organization down and where improvement will make the biggest difference. We review how strategy, people and processes work together.",
+      "outcomes_label": "Possible outcomes:",
+      "outcomes": "organizational diagnostic, clear priorities and a 90-day improvement roadmap.",
+      "button": "Explore the assessment",
+      "opens_canada_page": false
+    },
+    {
+      "name": "Strategy to Execution",
+      "tag": "",
+      "description": "A plan only works when people can put it into action. We help teams agree on priorities, responsibilities, milestones and ways to measure progress.",
+      "outcomes_label": "Possible outcomes:",
+      "outcomes": "execution plan, clearer accountability and progress tracking.",
+      "button": "Turn plans into action",
+      "opens_canada_page": false
+    },
+    {
+      "name": "Leadership Effectiveness",
+      "tag": "",
+      "description": "Strong leadership brings clarity and confidence. We help leaders make clear decisions, define roles and support teams to work effectively.",
+      "outcomes_label": "Possible outcomes:",
+      "outcomes": "leadership assessment, clearer decision-making and practical improvements.",
+      "button": "Strengthen your leadership",
+      "opens_canada_page": false
+    },
+    {
+      "name": "Culture and Employee Engagement",
+      "tag": "",
+      "description": "People do their best work when they feel heard, supported and accountable. We help organizations understand what is affecting teamwork, communication and employee engagement, then identify practical ways to improve.",
+      "outcomes_label": "Possible outcomes:",
+      "outcomes": "employee insights, focused improvements and an engagement action plan.",
+      "button": "Build a stronger team",
+      "opens_canada_page": false
+    },
+    {
+      "name": "Canadian Market Entry and Business Setup",
+      "tag": "International Business Advisory",
+      "description": "Looking to start or grow your business in Canada? We help international businesses understand what they need to do, plan their next steps and prepare to operate in Canada.",
+      "outcomes_label": "How we help:",
+      "outcomes": "business setup planning, understanding regulatory requirements, finding local support and creating an action plan.",
+      "button": "Explore doing business in Canada",
+      "opens_canada_page": true
+    }
+  ],
+  "hint_enquiry": "Opens our enquiry form with this service selected",
+  "hint_page": "Opens the Canadian Market Entry page",
+  "scope_note": "PHM Consulting provides business planning, management consulting and operational support. We do not provide legal, immigration, tax or other regulated professional advice. Where needed, we recommend working with qualified professionals."
+}

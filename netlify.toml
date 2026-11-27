@@ -1,8 +1,9 @@
+# Netlify builds the site from the text in /content every time something changes (including edits made in /admin).
 [build]
-  publish = "."
+  command = "python3 _src/build.py"
+  publish = "public"
   functions = "netlify/functions"
 
-# Keep the CMS admin and data folder out of search results
 [[headers]]
   for = "/admin/*"
   [headers.values]

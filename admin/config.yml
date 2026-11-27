@@ -1,30 +1,291 @@
-# Decap CMS: login-protected editing for PHM client quotes
+# PHM Consulting website editor (Decap CMS)
+# Log in at /admin with a GitHub account that has access to this repository.
+# Every "Publish" saves the change to GitHub; Netlify rebuilds the live site in about a minute.
 backend:
-  name: git-gateway        # Netlify Identity + Git Gateway; or use name: github with repo: owner/repo
+  name: github
+  repo: AkxshHans/phm-website
   branch: main
-media_folder: assets
-public_folder: /assets
-publish_mode: editorial_workflow
+  commit_messages:
+    update: "Website edit: {{collection}} / {{slug}}"
+    uploadMedia: "Website edit: upload {{path}}"
+    deleteMedia: "Website edit: delete {{path}}"
+
+site_url: https://www.phmconsulting.ca
+display_url: https://www.phmconsulting.ca
+logo_url: /assets/phm-logo-full.png
+media_folder: assets/uploads
+public_folder: /assets/uploads
 
 collections:
-  - name: content
-    label: Website content
+  - name: pages
+    label: Website pages
+    description: "Change the text and photos on each page, then press Publish. The live site updates in about a minute. Layout, colours and fonts are fixed so the design always stays consistent."
+    editor: { preview: false }
     files:
-      - name: quotes
-        label: Client quotes
-        file: data/quotes.json
+
+      # ---------------- HOME ----------------
+      - name: home
+        label: Home page
+        file: content/home.json
         fields:
-          - name: quotes
-            label: Quotes
-            label_singular: Quote
-            widget: list
-            summary: "{{fields.location}} · {{fields.order}} · {{fields.status}}"
+          - label: Top section
+            name: hero
+            widget: object
+            collapsed: false
             fields:
-              - { name: location, label: Shown on, widget: select, options: [home, about, services] }
-              - { name: order, label: Display order, widget: number, value_type: int, default: 1 }
-              - { name: status, label: Status, widget: select, options: [draft, published], default: draft }
-              - { name: sample, label: Sample quote (shows the staging label), widget: boolean, default: false }
-              - { name: quote, label: Quote, widget: text, pattern: ['^[\s\S]{1,600}$', "Up to 600 characters"] }
-              - { name: name, label: Name, widget: string, required: false }
-              - { name: role, label: Role, widget: string, required: false }
-              - { name: organization, label: Organization, widget: string, required: false }
+              - { label: "Headline (white part)", name: title, widget: string }
+              - { label: "Headline (gold part)", name: title_gold, widget: string, required: false }
+              - { label: "Short introduction", name: intro, widget: text }
+              - { label: "Gold button text (opens the enquiry form)", name: button_primary, widget: string }
+              - { label: "Second button text (opens the Services page)", name: button_secondary, widget: string }
+          - { label: "Statement under the top section", name: statement, widget: text }
+          - label: How We Work
+            name: how_we_work
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Points
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - { label: "Services list heading (the list itself comes from the Services page)", name: services_heading, widget: string }
+          - label: Let's Connect section
+            name: connect
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: "Button text (opens the enquiry form)", name: button, widget: string }
+              - { label: "Words before the email address", name: email_line, widget: string }
+          - label: Google search text
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Page title (browser tab and Google)", name: title, widget: string }
+              - { label: "Description shown in Google (about 150 characters)", name: description, widget: text }
+
+      # ---------------- ABOUT ----------------
+      - name: about
+        label: About Us page
+        file: content/about.json
+        fields:
+          - { label: "Small label above the headline", name: label, widget: string }
+          - { label: Headline, name: heading, widget: string }
+          - { label: "Opening paragraph (shown in bold)", name: intro, widget: text }
+          - label: More paragraphs
+            name: paragraphs
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - label: "Principles line (shown with dots between them)"
+            name: principles
+            widget: list
+            field: { label: Principle, name: principle, widget: string }
+          - label: Why Work With PHM section
+            name: why
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Short points
+                name: points
+                widget: list
+                field: { label: Point, name: point, widget: string }
+          - label: Team
+            name: team
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Line under the heading", name: subheading, widget: string }
+              - label: People
+                name: people
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: "Title (e.g. Co-founder and Managing Partner)", name: title, widget: string }
+                  - { label: "Photo (portrait, at least 1000 pixels wide)", name: photo, widget: image, choose_url: false }
+                  - { label: Bio, name: bio, widget: text }
+          - { label: "Button text at the bottom (opens the enquiry form)", name: button, widget: string }
+          - label: Google search text
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Page title (browser tab and Google)", name: title, widget: string }
+              - { label: "Description shown in Google (about 150 characters)", name: description, widget: text }
+
+      # ---------------- SERVICES ----------------
+      - name: services
+        label: Services page
+        file: content/services.json
+        fields:
+          - { label: "Small label above the headline", name: label, widget: string }
+          - { label: Headline, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - label: Services
+            name: services
+            widget: list
+            hint: "Drag to change the order. The same list is used on the Home page and in the enquiry form."
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Service name", name: name, widget: string }
+              - { label: "Small gold tag above the name (optional)", name: tag, widget: string, required: false }
+              - { label: Description, name: description, widget: text }
+              - { label: "Label before the outcomes (e.g. Possible outcomes:)", name: outcomes_label, widget: string }
+              - { label: Outcomes, name: outcomes, widget: text }
+              - { label: "Button text", name: button, widget: string }
+              - { label: "Button opens the Canadian Market Entry page (only for that service)", name: opens_canada_page, widget: boolean, default: false, required: false }
+          - { label: "Hint under buttons that open the enquiry form", name: hint_enquiry, widget: string }
+          - { label: "Hint under the button that opens the Canadian Market Entry page", name: hint_page, widget: string }
+          - { label: "Scope note (also shown on the Canadian Market Entry page)", name: scope_note, widget: text }
+          - label: Google search text
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Page title (browser tab and Google)", name: title, widget: string }
+              - { label: "Description shown in Google (about 150 characters)", name: description, widget: text }
+
+      # ---------------- CANADA ----------------
+      - name: canada
+        label: Canadian Market Entry page
+        file: content/canada.json
+        fields:
+          - { label: "Breadcrumb name", name: breadcrumb, widget: string }
+          - { label: "Small gold tag above the headline", name: tag, widget: string, required: false }
+          - { label: Headline, name: heading, widget: string }
+          - { label: "Line under the headline", name: lead, widget: text }
+          - label: Introduction paragraphs
+            name: intro
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - { label: "Button text (opens the enquiry form)", name: button, widget: string }
+          - { label: "Wide photo", name: photo, widget: image, choose_url: false, required: false }
+          - { label: "Photo description (for screen readers and Google)", name: photo_alt, widget: string, required: false }
+          - label: Who We Help
+            name: who
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Line under the heading", name: intro, widget: string }
+              - label: List
+                name: items
+                widget: list
+                field: { label: Item, name: item, widget: string }
+          - label: How We Can Help
+            name: how
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Steps
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - label: What You Can Expect
+            name: expect
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Line under the heading", name: intro, widget: string }
+              - label: List
+                name: items
+                widget: list
+                field: { label: Item, name: item, widget: string }
+              - { label: "Small note under the list", name: note, widget: text }
+          - label: Why Work With PHM
+            name: why
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: Frequently Asked Questions
+            name: faq
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Questions
+                name: items
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Answer, name: answer, widget: text }
+          - label: Closing section
+            name: talk
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: "Back link text", name: back_link, widget: string }
+          - label: Google search text
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Page title (browser tab and Google)", name: title, widget: string }
+              - { label: "Description shown in Google (about 150 characters)", name: description, widget: text }
+
+      # ---------------- CONTACT ----------------
+      - name: contact
+        label: Contact page
+        file: content/contact.json
+        fields:
+          - { label: "Small label above the headline", name: label, widget: string }
+          - { label: Headline, name: heading, widget: string }
+          - { label: "Line under the headline", name: lead, widget: text }
+          - { label: "Words before the email address", name: email_prefix, widget: string }
+          - { label: "Caption under the Instagram QR code", name: qr_caption, widget: string }
+          - { label: Photo, name: photo, widget: image, choose_url: false, required: false }
+          - { label: "Photo description (for screen readers and Google)", name: photo_alt, widget: string, required: false }
+          - { label: "Privacy notice under the form", name: privacy_note, widget: text }
+          - { label: "Send button text", name: button, widget: string }
+          - label: Google search text
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Page title (browser tab and Google)", name: title, widget: string }
+              - { label: "Description shown in Google (about 150 characters)", name: description, widget: text }
+
+      # ---------------- TESTIMONIALS ----------------
+      - name: testimonials
+        label: Testimonials
+        file: content/testimonials.json
+        fields:
+          - { label: "Show the scrolling testimonials on the Home page", name: show_on_homepage, widget: boolean, default: true }
+          - label: Testimonials
+            name: items
+            widget: list
+            summary: "{{fields.quote}}"
+            fields:
+              - { label: "Quote (without quotation marks)", name: quote, widget: text }
+              - { label: "Name (optional)", name: name, widget: string, required: false }
+              - { label: "Role (optional)", name: role, widget: string, required: false }
+              - { label: "Organization (optional)", name: organization, widget: string, required: false }
+
+      # ---------------- FOOTER & CONTACT DETAILS ----------------
+      - name: site
+        label: Footer and contact details
+        file: content/site.json
+        fields:
+          - { label: "Email address shown on the website", name: email, widget: string, hint: "Enquiry form messages always go to phmconsulting.advisory@gmail.com. Ask your developer to change that address." }
+          - { label: "Instagram link", name: instagram_url, widget: string }
+          - { label: "Instagram name shown (e.g. @phmconsulting)", name: instagram_handle, widget: string }
+          - { label: "Footer: company name", name: footer_name, widget: string }
+          - { label: "Footer: tagline", name: footer_tagline, widget: string }
+          - { label: "Footer: short description", name: footer_description, widget: text }
+          - label: "Gold words strip (Planning + High Performance + Momentum)"
+            name: strip_words
+            widget: list
+            field: { label: Word, name: word, widget: string }
