@@ -1,8 +1,4 @@
 {
-  "seo": {
-    "title": "Management Consulting in Canada | PHM Consulting",
-    "description": "PHM Consulting helps organizations improve performance, strengthen leadership and turn strategy into action. Practical consulting across Canada."
-  },
   "hero": {
     "title": "Less Talk. More Action.",
     "title_gold": "Real Results.",
@@ -10,7 +6,7 @@
     "button_primary": "Book an initial consultation",
     "button_secondary": "Explore our services"
   },
-  "statement": "When progress stalls, decisions get delayed or teams struggle to move forward, PHM Consulting brings the structure, expertise and practical support needed to create momentum.",
+  "statement": "When progress stalls, decisions get delayed or teams struggle to move forward, PHM Consulting brings the structure, expertise and practical support needed to create momentum. TEST",
   "how_we_work": {
     "heading": "How We Work",
     "items": [
@@ -34,5 +30,9 @@
     "text": "Tell us what your organization is working through and what you'd like to improve. We'll use your intake form to prepare for a focused first conversation.",
     "button": "Start a conversation",
     "email_line": "Or email us directly:"
+  },
+  "seo": {
+    "title": "Management Consulting in Canada | PHM Consulting",
+    "description": "PHM Consulting helps organizations improve performance, strengthen leadership and turn strategy into action. Practical consulting across Canada."
   }
 }
