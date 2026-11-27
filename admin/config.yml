@@ -1,0 +1,30 @@
+# Decap CMS: login-protected editing for PHM client quotes
+backend:
+  name: git-gateway        # Netlify Identity + Git Gateway; or use name: github with repo: owner/repo
+  branch: main
+media_folder: assets
+public_folder: /assets
+publish_mode: editorial_workflow
+
+collections:
+  - name: content
+    label: Website content
+    files:
+      - name: quotes
+        label: Client quotes
+        file: data/quotes.json
+        fields:
+          - name: quotes
+            label: Quotes
+            label_singular: Quote
+            widget: list
+            summary: "{{fields.location}} · {{fields.order}} · {{fields.status}}"
+            fields:
+              - { name: location, label: Shown on, widget: select, options: [home, about, services] }
+              - { name: order, label: Display order, widget: number, value_type: int, default: 1 }
+              - { name: status, label: Status, widget: select, options: [draft, published], default: draft }
+              - { name: sample, label: Sample quote (shows the staging label), widget: boolean, default: false }
+              - { name: quote, label: Quote, widget: text, pattern: ['^[\s\S]{1,600}$', "Up to 600 characters"] }
+              - { name: name, label: Name, widget: string, required: false }
+              - { name: role, label: Role, widget: string, required: false }
+              - { name: organization, label: Organization, widget: string, required: false }
